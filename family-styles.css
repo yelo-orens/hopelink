@@ -5,12 +5,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #0b0b0c;
     color: #f5f5f5;
     overflow-x: hidden;
 }
-/* NAVBAR */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -39,45 +39,43 @@ nav a {
     cursor: pointer;
 }
 
-
-/* CENTER CONTAINER */
 .container {
-    text-align: center;
-    margin: clamp(80px, 16vw, 200px) auto 0;
-    padding: 0 20px;
     width: min(900px, 100%);
+    margin: 0 auto;
+    padding: clamp(30px, 6vw, 50px) 20px 60px;
 }
 
-/* TITLE */
 h1 {
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-/* LIST */
-.category-list {
+.subtitle {
+    text-align: center;
+    color: #d88d8d;
+    margin-bottom: 28px;
+}
+
+.essay-list {
     list-style: none;
-    padding: 0;
+    display: grid;
+    gap: 16px;
 }
 
-.category-list li {
-    margin: 15px 0;
+.essay-item {
+    background: #141414;
+    border: 1px solid #4a2323;
+    border-radius: 10px;
+    padding: 18px 20px;
 }
 
-/* LINKS */
-.category-list a {
-    text-decoration: none;
-    color: #ffd4d4;
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    transition: 0.3s;
+.essay-item h3 {
+    margin-bottom: 8px;
+    font-size: clamp(1.05rem, 2.7vw, 1.2rem);
 }
 
-.category-list a:hover {
-    color: #ffb0b0;
-}
-
-.back{
-    color: #ffd4d4;
-    text-decoration: none;
+.essay-item p {
+    color: #d88d8d;
 }
 
 @media (max-width: 768px) {

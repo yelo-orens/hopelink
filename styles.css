@@ -6,8 +6,9 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
+    background: #0b0b0c;
+    color: #f5f5f5;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -16,7 +17,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: #111;
+    background: #b43a3a;
+    position: relative;
 }
 
 .logo {
@@ -43,18 +45,19 @@ nav a {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 100px 20px;
+    padding: clamp(56px, 10vw, 100px) 20px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 300px;
+    font-size: clamp(2.5rem, 16vw, 13rem);
+    line-height: 0.95;
 }   
 
 .hero p {
     margin-top: -10px;
-    font-size: 20px; 
-    color: #aaa;
+    font-size: clamp(1rem, 2.8vw, 1.25rem); 
+    color: #d88d8d;
 }
 
 /* GRID */
@@ -62,11 +65,14 @@ nav a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 40px;
+    padding: clamp(20px, 4vw, 40px);
+    width: min(1200px, 100%);
+    margin: 0 auto;
 }
 
 .card {
-    background: #1a1a1a;
+    background: #141414;
+    border: 1px solid #4a2323;
     border-radius: 10px;
     overflow: hidden;
     transition: 0.3s;
@@ -79,6 +85,13 @@ nav a {
 
 .card h3 {
     padding: 15px;
+    color: #ffe9e9;
+}
+
+.card .author {
+    padding: 0 15px 15px;
+    color: #d88d8d;
+    font-size: 0.95rem;
 }
 
 .card:hover {
@@ -87,21 +100,43 @@ nav a {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+    }
+
     nav {
         display: none;
         flex-direction: column;
-        background: #111;
+        background: #181818;
         position: absolute;
-        top: 70px;
+        top: 60px;
+        left: 20px;
         right: 20px;
-        padding: 20px;
+        padding: 12px;
+        border: 1px solid #4a2323;
+        border-radius: 10px;
+        gap: 10px;
+        z-index: 10;
     }
 
     nav.active {
         display: flex;
     }
 
+    nav a {
+        margin: 0;
+        padding: 10px 8px;
+    }
+
     .menu-toggle {
         display: block;
+    }
+
+    .hero p {
+        margin-top: 6px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
