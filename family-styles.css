@@ -5,32 +5,49 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter Tight", Arial, sans-serif;
     background: #0b0b0c;
     color: #f5f5f5;
     overflow-x: hidden;
+    line-height: 1.5;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: #b43a3a;
-    position: relative;
+    width: min(1200px, calc(100% - 40px));
+    margin: 18px auto 0;
+    padding: 14px 20px;
+    background: rgba(180, 58, 58, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    position: sticky;
+    top: 14px;
+    z-index: 20;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1px;
     text-decoration: none;
     color: white;
+    font-size: 1.05rem;
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 8px;
+    padding: 8px 12px;
     text-decoration: none;
     color: white;
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.16);
 }
 
 .menu-toggle {
@@ -42,12 +59,14 @@ nav a {
 .container {
     width: min(900px, 100%);
     margin: 0 auto;
-    padding: clamp(30px, 6vw, 50px) 20px 60px;
+    padding: clamp(26px, 5vw, 46px) 20px 60px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 6vw, 3rem);
 }
 
 .subtitle {
@@ -65,8 +84,10 @@ h1 {
 .essay-item {
     background: #141414;
     border: 1px solid #4a2323;
-    border-radius: 10px;
+    border-radius: 14px;
     padding: 18px 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
 }
 
 .essay-item h3 {
@@ -78,22 +99,31 @@ h1 {
     color: #d88d8d;
 }
 
+.essay-item:hover {
+    transform: translateY(-5px);
+    border-color: #7a3434;
+    box-shadow: 0 20px 34px rgba(0, 0, 0, 0.34);
+}
+
 @media (max-width: 768px) {
     .navbar {
-        padding: 16px 20px;
+        width: calc(100% - 24px);
+        margin-top: 10px;
+        padding: 12px 14px;
+        top: 8px;
     }
 
     nav {
         display: none;
         flex-direction: column;
-        background: #181818;
+        background: rgba(24, 24, 24, 0.96);
         position: absolute;
-        top: 60px;
-        left: 20px;
-        right: 20px;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
         padding: 12px;
         border: 1px solid #4a2323;
-        border-radius: 10px;
+        border-radius: 12px;
         gap: 10px;
         z-index: 10;
     }
@@ -104,7 +134,7 @@ h1 {
 
     nav a {
         margin: 0;
-        padding: 10px 8px;
+        padding: 10px;
     }
 
     .menu-toggle {
